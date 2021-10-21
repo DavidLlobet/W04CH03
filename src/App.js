@@ -10,10 +10,10 @@ function App() {
 
   return (
     <Context.Provider value={{ showNumbers, setShowNumbers }}>
-      <div class="container">
+      <div className="container">
         <Info />
-        <main class="phone">
-          <div class="keyboard-container">
+        <main className="phone">
+          <div className="keyboard-container">
             <Keyboard />
           </div>
           <Display number={showNumbers} />
