@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Keyboard from "./components/Keyboard/Keyboard";
+import Info from "./components/Info/Info";
+import { useState } from "react";
+import Context from "./Context/Context";
+import Display from "./components/Display/Display";
 
 function App() {
+  const [showNumbers, setShowNumbers] = useState("");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Context.Provider value={{ showNumbers, setShowNumbers }}>
+      <div className="container">
+        <Info />
+        <main className="phone">
+          <div className="keyboard-container">
+            <Keyboard />
+          </div>
+          <Display number={showNumbers} />
+        </main>
+      </div>
+    </Context.Provider>
   );
 }
 

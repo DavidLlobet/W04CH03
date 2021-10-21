@@ -1,4 +1,4 @@
-const Info = (isCalling) => {
+const Info = ({ isCalling }) => {
   return (
     <span className={`message${isCalling ? "" : " off"}`}>Calling...</span>
   );
