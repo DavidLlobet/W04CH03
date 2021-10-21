@@ -1,7 +1,5 @@
-const Info = ({ isCalling }) => {
-  return (
-    <span className={`message${isCalling ? "" : " off"}`}>Calling...</span>
-  );
+const Info = ({ calling }) => {
+  return <span className={`message${calling ? "" : " off"}`}>Calling...</span>;
 };
 
 export default Info;
