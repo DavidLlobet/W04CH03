@@ -3,9 +3,8 @@ import Context from "../../Context/Context";
 import { useContext } from "react";
 import Action from "../Action/Action";
 
-const Actions = () => {
+const Actions = (setCalling) => {
   const { showNumbers, setShowNumbers } = useContext(Context);
-  const { calling, setCalling } = useContext(Context);
 
   const makeCall = () => {
     setShowNumbers("");
