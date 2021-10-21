@@ -10,9 +10,18 @@ const Key = ({ number, className }) => {
     }
   };
 
+  const deleteNumber = () => {
+    if (showNumbers.length > 0) {
+      setShowNumbers("");
+    }
+  };
+
   return (
     <li>
-      <button className={className} onClick={addNumber}>
+      <button
+        className={className}
+        onClick={number === "delete" ? deleteNumber : addNumber}
+      >
         {number}
       </button>
     </li>
