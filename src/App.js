@@ -1,17 +1,25 @@
 import "./App.css";
 import Keyboard from "./components/Keyboard/Keyboard";
 import Info from "./components/Info/Info";
+import { useState } from "react";
+import Context from "./Context/Context";
+import Display from "./components/Display/Display";
 
 function App() {
+  const [showNumbers, setShowNumbers] = useState("");
+
   return (
-    <div class="container">
-      <Info />
-      <main class="phone">
-        <div class="keyboard-container">
-          <Keyboard />
-        </div>
-      </main>
-    </div>
+    <Context.Provider value={{ showNumbers, setShowNumbers }}>
+      <div class="container">
+        <Info />
+        <main class="phone">
+          <div class="keyboard-container">
+            <Keyboard />
+          </div>
+          <Display number={showNumbers} />
+        </main>
+      </div>
+    </Context.Provider>
   );
 }
 
