@@ -5,7 +5,7 @@ const Key = ({ number, className }) => {
   const { showNumbers, setShowNumbers } = useContext(Context);
 
   const addNumber = () => {
-    if (showNumbers.length < 10) {
+    if (showNumbers.length < 9) {
       setShowNumbers(showNumbers + number);
     }
   };

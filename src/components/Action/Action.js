@@ -1,23 +1,12 @@
 import { useContext } from "react";
 import Context from "../../Context/Context";
 
-const Action = ({ text, className }) => {
+const Action = ({ text, className, actionOnClick }) => {
   const { showNumbers, setShowNumbers } = useContext(Context);
-
-  const call = () => {
-    if (showNumbers.length < 10) {
-      setShowNumbers(showNumbers + number);
-    }
-  };
-
-  const hang = () => {
-    if (showNumbers.length > 0) {
-      setShowNumbers("");
-    }
-  }
+  const { calling, setCalling } = useContext(Context);
 
   return (
-    <a href="button" className={className} onclick={}>
+    <a href="button" className={className} onClick={actionOnClick}>
       {text}
     </a>
   );

@@ -3,20 +3,23 @@ import Keyboard from "./components/Keyboard/Keyboard";
 import Info from "./components/Info/Info";
 import { useState } from "react";
 import Context from "./Context/Context";
-import Display from "./components/Display/Display";
+import Actions from "./components/Actions/Actions";
 
 function App() {
   const [showNumbers, setShowNumbers] = useState("");
+  const [calling, setCalling] = useState(false);
 
   return (
-    <Context.Provider value={{ showNumbers, setShowNumbers }}>
+    <Context.Provider
+      value={{ showNumbers, setShowNumbers, calling, setCalling }}
+    >
       <div className="container">
-        <Info />
+        <Info calling={calling} />
         <main className="phone">
           <div className="keyboard-container">
             <Keyboard />
           </div>
-          <Display number={showNumbers} />
+          <Actions />
         </main>
       </div>
     </Context.Provider>
